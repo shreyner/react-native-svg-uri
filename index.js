@@ -243,9 +243,8 @@ class SvgUri extends Component{
     // Recursive function.
     if (node.childNodes && node.childNodes.length > 0){
         for (let i = 0; i < node.childNodes.length; i++){
-          const isTextValue = node.childNodes[i].nodeValue
-          if (isTextValue) {
-            console.log(node)
+          const isTextValue = node.childNodes[i].nodeValue;
+          if (isTextValue && isTextValue.trim()) {
             arrayElements.push(node.childNodes[i].nodeValue)
           } else {
             const nodo = this.inspectNode(node.childNodes[i]);
